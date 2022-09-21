@@ -1,7 +1,12 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import { onMounted, ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
+const helloRef = ref(null)
+onMounted(() => {
+  console.log('helloRef', helloRef.value.increment());
+})
 </script>
 
 <template>
@@ -13,7 +18,10 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld class="testClass" msg="Vite + Vue" ref="helloRef">
+    <span>this is slot</span>
+  </HelloWorld>
+  <!-- <component :is="HelloWorld" /> -->
 </template>
 
 <style scoped>

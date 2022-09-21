@@ -1,12 +1,14 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import { onMounted, ref } from 'vue';
-import HelloWorld from './components/HelloWorld.vue'
-const helloRef = ref(null)
+import { onMounted, ref } from "vue";
+import HelloWorld from "./components/HelloWorld.vue";
+import MyModal from "./components/MyModal.vue";
+import EmitTest from "./components/EmitTest.vue";
+const helloRef = ref(null);
 onMounted(() => {
-  console.log('helloRef', helloRef.value.increment());
-})
+  console.log("helloRef", helloRef.value.increment());
+});
 </script>
 
 <template>
@@ -18,10 +20,17 @@ onMounted(() => {
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld class="testClass" msg="Vite + Vue" ref="helloRef">
+  <HelloWorld ref="helloRef">
     <span>this is slot</span>
   </HelloWorld>
   <!-- <component :is="HelloWorld" /> -->
+  <!-- <div class="outer">
+    <h3>Vue Teleport Example</h3>
+    <div>
+      <MyModal></MyModal>
+    </div>
+  </div> -->
+  <!-- <EmitTest></EmitTest> -->
 </template>
 
 <style scoped>

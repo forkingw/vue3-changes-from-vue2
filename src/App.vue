@@ -2,12 +2,23 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { onMounted, ref } from "vue";
+import Composition from "./components/Composition.vue";
+import Option from "./components/Option.vue";
 // import HelloWorld from "./components/HelloWorld.vue";
 // import MyModal from "./components/MyModal.vue";
 // import EmitTest from "./components/EmitTest.vue";
-const helloRef = ref(null);
+// const helloRef = ref(null);
+
+const one = ref(null);
+const two = ref(null);
 onMounted(() => {
   // console.log("helloRef", helloRef.value.increment());
+  console.log("one", one);
+  console.log("two", two);
+  console.log(
+    "one.value.click === two.value.click",
+    one.value.click === two.value.click
+  );
 });
 </script>
 
@@ -31,7 +42,10 @@ onMounted(() => {
     </div>
   </div> -->
   <!-- <EmitTest></EmitTest> -->
-  <ReactivityCore></ReactivityCore>
+  <Composition />
+  <hr />
+  <Option ref="one" />
+  <Option ref="two" />
 </template>
 
 <style scoped>

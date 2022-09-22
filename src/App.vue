@@ -2,9 +2,9 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { onMounted, ref } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
-import MyModal from "./components/MyModal.vue";
-import EmitTest from "./components/EmitTest.vue";
+// import HelloWorld from "./components/HelloWorld.vue";
+// import MyModal from "./components/MyModal.vue";
+// import EmitTest from "./components/EmitTest.vue";
 const helloRef = ref(null);
 onMounted(() => {
   // console.log("helloRef", helloRef.value.increment());
@@ -12,7 +12,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <!-- <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
@@ -22,7 +22,7 @@ onMounted(() => {
   </div>
   <HelloWorld ref="helloRef">
     <span>this is slot</span>
-  </HelloWorld>
+  </HelloWorld> -->
   <!-- <component :is="HelloWorld" /> -->
   <!-- <div class="outer">
     <h3>Vue Teleport Example</h3>
@@ -31,6 +31,7 @@ onMounted(() => {
     </div>
   </div> -->
   <!-- <EmitTest></EmitTest> -->
+  <ReactivityCore></ReactivityCore>
 </template>
 
 <style scoped>

@@ -52,7 +52,9 @@ export default {
   <button @click="increment">Count is {{ count }}-{{ initialData }}</button>
   <!-- <span>{{ msg }}</span>
   <span>{{ a }}</span> -->
-  <span>111</span>
+  <span v-for="i in 10">{{ i }}</span>
+  <div v-if="count">Yes</div>
+  <div v-else>No</div>
 </template>
 <style>
 span {

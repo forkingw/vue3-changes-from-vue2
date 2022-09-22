@@ -7,7 +7,7 @@ import MyModal from "./components/MyModal.vue";
 import EmitTest from "./components/EmitTest.vue";
 const helloRef = ref(null);
 onMounted(() => {
-  console.log("helloRef", helloRef.value.increment());
+  // console.log("helloRef", helloRef.value.increment());
 });
 </script>
 

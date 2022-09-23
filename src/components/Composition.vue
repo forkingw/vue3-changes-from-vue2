@@ -1,36 +1,41 @@
 <script setup>
-import { nextTick, reactive, shallowReactive, isReactive } from "vue";
+import { computed, ref } from 'vue';
 
-const state = reactive({
-  count: 0,
-  nested: { count: 0 },
-  arr: ["foo", "bar"],
-});
-const { count } = state;
-
-function increame() {
-  state.count++;
-  console.log(state.count);
-  nextTick(() => {
-    state.nested.count += 2;
-    state.arr.push(state.nested.count);
-  });
-  obj.nested.count.a++;
-}
-const obj = shallowReactive({
-  foo: 1,
-  nested: {
-    count: {
-      a: 1,
-    },
-  },
-});
+const count = ref(1)
+// const plusOne = computed({
+//   get: () => count.value + 1,
+//   set: (val) => {
+//     count.value = val - 1
+//   }
+// })
+// plusOne.value = 1
+// console.log('count.value', count.value)
+// console.log(plusOne);
+// plusOne.value++ is readonly
+// function increase() {
+//   plusOne.value += 1
+// }
+// const plusOne = computed(() => count.value + 1, {
+//   onTrack(e) {
+//     console.log('onTrack', e);
+//     debugger
+//   },
+//   onTrigger(e) {
+//     console.log('onTrigger', e);
+//     debugger
+//   }
+// })
+// function increase() {
+//   count.value ++
+// }
+const plusOne = computed(() => 1)
+console.log('plusOne', plusOne);
+const plusTwo = computed(() => count.value ++)
+console.log('plusTwo', plusTwo);
 </script>
+
 <template>
-  <div>state: {{ state.count }}</div>
-  <div>coutn: {{ count }}</div>
-  <div>nested-state: {{ state.nested.count }}</div>
-  <div>arr: {{ state.arr }}</div>
-  <div>obj: {{ obj.nested.count.a }}</div>
-  <button @click="increame">composition +</button>
+  <div>count: {{ count }}</div>
+  <div>plusOne: {{ plusOne }}</div>
+  <button @click="increase">+</button>
 </template>
